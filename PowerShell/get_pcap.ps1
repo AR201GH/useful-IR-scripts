@@ -62,4 +62,4 @@ Start-Process -FilePath "$env:TEMP\etl2pcapng.exe" -ArgumentList "$env:TEMP\capt
 $PCap = "$env:TEMP\capture.etl.pcap"
 Write-Message -Message  "If using is CrowdStrike RTR - Run get $PCap to download pcap file, if not browse to location" -Type "INFO" 
 
-echo "ALL DONE"
+echo "DONE"
