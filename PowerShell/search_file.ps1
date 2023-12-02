@@ -4,7 +4,7 @@ param (
 )
 
 # Append a wildcard character (*) on each side to the search pattern to match any file extension
-$SearchPattern = "*$SearchPattern"
+$SearchPattern = "*$SearchPattern*"
 
 # Search for files matching the search pattern in the entire current drive
 $files = Get-ChildItem -Path $env:SystemDrive -Recurse -File -Filter $SearchPattern
