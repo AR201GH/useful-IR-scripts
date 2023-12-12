@@ -48,7 +48,7 @@ foreach ($ip in $ipAddresses) {
     # Check if the country is in the high-risk countries list
     if ($highRiskCountries -contains $countryName) {
         # Output the country name and IP address
-        Write-Output "Country: $countryName, IP: $ip"
+        Write-Output "High risk connection found! Country: $countryName, IP: $ip"
         $foundMatches = $true
     }
 }
