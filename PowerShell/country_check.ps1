@@ -1,4 +1,12 @@
+function Green
+{
+    process { Write-Host $_ -ForegroundColor Green }
+}
 
+function Red
+{
+    process { Write-Host $_ -ForegroundColor Red }
+}
 # Run netstat command and extract external IP addresses
 $netstatOutput = netstat -n | Select-String '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' -AllMatches
 $ipAddresses = $netstatOutput.Matches.Value | Where-Object { $_ -notlike "127.*.*.*" -and $_ -notlike "192.168.*.*" }
@@ -48,13 +56,13 @@ foreach ($ip in $ipAddresses) {
     # Check if the country is in the high-risk countries list
     if ($highRiskCountries -contains $countryName) {
         # Output the country name and IP address
-        Write-Output "High risk connection found! Country: $countryName, IP: $ip"
+        Write-Output "High risk connection found! Country: $countryName, IP: $ip" | Red
         $foundMatches = $true
     }
 }
 
 # Check if any high-risk country matches were found
 if (-not $foundMatches) {
-    Write-Output "No active connections detected from any high-risk countries"
+    Write-Output "No active connections detected from any high-risk countries!" | Green
 }
 
