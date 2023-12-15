@@ -7,6 +7,27 @@ Powershell scripts can be used in CrowdStrike RTR or ran locally.
 
 
 
+[Get info](https://github.com/AR201GH/useful-IR-scripts/blob/main/PowerShell/get_pcap.ps1)
+\- This script will gather and output various system information and match some against an external database. This script gathers the following:
+
+*Local system information
+*Environmental Variables
+*Local users and groups
+*Members of the build-in Administrators group
+*List of installed products
+*List of running services
+*List of running processes
+*List of Established and Listening network connections, including the port and responsible process
+*Local DNS Cache
+*Browser Extensions - Lists extension IDs. External lookup to match any malicious extension IDs to: https://github.com/mallorybowes/chrome-mal-ids/blob/master/current-list.csv (Only supports Chrome right now)
+*Any recent files found in: AppData\Roaming\Microsoft\Windows\Recent
+
+The results are out to a formatted HTML file named "output.html" and is placed in the current directory. Script will also output HTML file location when completed
+
+Example output (Extensions Section):
+![image](https://github.com/AR201GH/useful-IR-scripts/assets/135081007/bf926e72-13f6-47e4-a0e2-dafc28e0bb5f)
+
+
 [Get pcap](https://github.com/AR201GH/useful-IR-scripts/blob/main/PowerShell/get_pcap.ps1)
 \- This script will generate a 30 second network capture and convert it to a .pcap file. It contains color-coded messages to indicate message type.
 
