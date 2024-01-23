@@ -4,8 +4,8 @@ $logFilePath = Read-Host -Prompt "Enter the path to the log file"
 # Read the log file
 $logContent = Get-Content -Path $logFilePath
 
-# Define a regular expression pattern to match IP addresses
-$ipPattern = "\b(?:\d{1,3}\.){3}\d{1,3}\b"
+# Regex pattern to match IPv4/6 addresses
+$ipPattern = "\b(?:\d{1,3}\.){3}\d{1,3}\b|\b(?:[A-F0-9]{1,4}:){7}[A-F0-9]{1,4}\b"
 
 # Find all IP addresses in the log file
 $ipAddresses = $logContent | Select-String -Pattern $ipPattern -AllMatches | ForEach-Object {
@@ -16,6 +16,6 @@ $ipAddresses = $logContent | Select-String -Pattern $ipPattern -AllMatches | For
 if ($ipAddresses.Count -eq 0) {
     Write-Host "No IP addresses found in the log file."
 } else {
-    # Output the matched IP addresses
+    # Output the matches
     $ipAddresses
 }
