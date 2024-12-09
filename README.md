@@ -7,7 +7,7 @@ Powershell scripts can be used in CrowdStrike RTR or ran locally.
 
 
 
-[Get info](https://github.com/AR201GH/useful-IR-scripts/blob/main/PowerShell/get_pcap.ps1)
+[Get info](https://github.com/AR201GH/useful-IR-scripts/blob/main/PowerShell%2Fgather_info.ps1)
 \- This script will gather and output various system information and match some against an external database. This script gathers the following:
 
 * Local system information
